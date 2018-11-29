@@ -1,6 +1,6 @@
 epicsEnvSet("SYS", "HZB-V20:TS")
 epicsEnvSet("PCI_SLOT", "1:0.0")
-epicsEnvSet("DEVICE", "EVR-1")
+epicsEnvSet("DEVICE", "EVR-01")
 epicsEnvSet("EVR", "$(DEVICE)")
 epicsEnvSet("CHIC_SYS", "HZB-V20:")
 epicsEnvSet("CHOP_DRV", "Chop-Drv-01tmp")
