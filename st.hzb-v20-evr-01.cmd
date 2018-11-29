@@ -1,19 +1,19 @@
-epicsEnvSet("SYS", "LabS-Utgard-VIP:TS")
-epicsEnvSet("PCI_SLOT", "5:0.0")
+epicsEnvSet("SYS", "HZB-V20:TS")
+epicsEnvSet("PCI_SLOT", "1:0.0")
 epicsEnvSet("DEVICE", "EVR-1")
 epicsEnvSet("EVR", "$(DEVICE)")
-epicsEnvSet("CHIC_SYS", "LabS-Utgard-VIP:")
-epicsEnvSet("CHOP_DRV", "Chop-Drv-01")
+epicsEnvSet("CHIC_SYS", "HZB-V20:")
+epicsEnvSet("CHOP_DRV", "Chop-Drv-01tmp")
 epicsEnvSet("CHIC_DEV", "TS-$(DEVICE)")
 epicsEnvSet("MRF_HW_DB", "evr-pcie-300dc-ess.db")
-epicsEnvSet("E3_MODULES", "/home/root/epics/iocs/e3")
-epicsEnvSet("EPICS_CMDS", "/home/root/epics/iocs/cmds")
+#epicsEnvSet("E3_MODULES", "/epics/iocs/e3")
+epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
 
 ######## Temporary until chopper group ###########
 ######## changes PV names              ###########
-epicsEnvSet("NCG_SYS", "LabS-VIP:")
+epicsEnvSet("NCG_SYS", "HZB-V20:")
 # Change to 01a: to avoid conflict with EVR2 names
-epicsEnvSet("NCG_DRV", "Chop-Drv-01a:")
+epicsEnvSet("NCG_DRV", "Chop-Drv-01tmp:")
 ##################################################
 
 < "$(EPICS_CMDS)/mrfioc2-common/st.evr.cmd"
