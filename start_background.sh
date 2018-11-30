@@ -6,10 +6,10 @@ export REQUIRE_VER="3.0.4"
 export E3_BIN_DIR="/epics/base-$BASE_VER/require/$REQUIRE_VER/bin"
 export PROCSERV="/usr/bin/procServ"
 export PROCSERV_PORT=2005
-export PROCSERV_RUN_DIR=hzb-v20-evr-01
-export PROCSERV_LOG_FILE=out-HZB-V20-EVR-01
+export PROCSERV_RUN_DIR=hzb-v20-evr-02
+export PROCSERV_LOG_FILE=out-HZB-V20-EVR-02
 
-export IOC_ST_CMD=st.hzb-v20-evr-01.cmd
+export IOC_ST_CMD=st.hzb-v20-evr-02.cmd
 source "$E3_BIN_DIR/setE3Env.bash"
 
 # Ensure log and run directories exist
