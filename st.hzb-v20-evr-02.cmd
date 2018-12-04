@@ -1,3 +1,7 @@
+require evr-timestamp-buffer,2.5.0
+require dmsc_detector_interface,master
+require stream,2.7.14p
+
 epicsEnvSet("SYS", "HZB-V20:TS")
 epicsEnvSet("PCI_SLOT", "1:0.0")
 epicsEnvSet("DEVICE", "EVR-02")
@@ -15,9 +19,11 @@ epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
 
 < "$(EPICS_CMDS)/mrfioc2-common-cmd/st.evr.cmd"
 
-require dmsc_detector_interface,master
-require stream,2.7.14p
+# Load EVR database
+dbLoadRecords("$(MRF_HW_DB)","EVR=$(EVR),SYS=$(SYS),D=$(DEVICE),FEVT=88.0525,PINITSEQ=0")
 
+# Load timestamp buffer database - @Will Smith, uncomment if required
+#iocshLoad("$(evr-timestamp-buffer_DIR)/evr-timestamp-buffer.iocsh", "CHIC_SYS=$(CHIC_SYS), CHIC_DEV=$(CHIC_DEV), CHOP_DRV=$(CHOP_DRV), SYS=$(SYS)")
 
 ############# -------- Detector Readout Interface ----------------- ##################
 epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02-cmd") 
