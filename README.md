@@ -1,8 +1,8 @@
-# ics-e3-hzb-v20-evr1-cmds
+# hzb-v20-evr-02-cmd
 
-Startup scripts for hzb-v20-evr1
+Startup scripts for hzb-v20-evr-02
 
-## st.hzb-v20-evr1.cmd
+## st.hzb-v20-evr-02.cmd
 
 EPICS startup script
 
