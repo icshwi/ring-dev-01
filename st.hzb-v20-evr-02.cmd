@@ -1,4 +1,5 @@
-require evr-timestamp-buffer,2.5.0
+# @Will Smith - uncomment if you want the timestamp buffer database
+#require evr-timestamp-buffer,2.5.0
 require dmsc_detector_interface,master
 require stream,2.7.14p
 
