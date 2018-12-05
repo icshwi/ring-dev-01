@@ -1,6 +1,6 @@
 # @Will Smith - uncomment if you want the timestamp buffer database
 #require evr-timestamp-buffer,2.5.0
-require dmsc_detector_interface,master
+require dmsc_detector_interface,develop
 require stream,2.7.14p
 
 epicsEnvSet("SYS", "HZB-V20:TS")
@@ -58,8 +58,8 @@ dbpf $(SYS)-$(DEVICE):Time-Clock-SP 88.0525
 #dbpf $(SYS)-$(DEVICE):DC-Tgt-SP 70
 dbpf $(SYS)-$(DEVICE):DC-Tgt-SP 100
 
-# Connect prescaler reset to event DET_CLK_RST_EVT
-dbpf $(SYS)-$(DEVICE):Evt-ResetPS-SP DET_CLK_RST_EVT
+# Connect prescaler reset to event $(DET_CLK_RST_EVT)
+dbpf $(SYS)-$(DEVICE):Evt-ResetPS-SP $(DET_CLK_RST_EVT)
 
 # Connect FP08 to PS0
 dbpf $(SYS)-$(DEVICE):OutFPUV08-Ena-SP 1
@@ -67,7 +67,7 @@ dbpf $(SYS)-$(DEVICE):OutFPUV08-Src-SP 40
 dbpf $(SYS)-$(DEVICE):PS0-Div-SP 2
 
 # Map pulser 9 to event code SYNC_TRIG_EVT
-dbpf $(SYS)-$(DEVICE):DlyGen9-Evt-Trig0-SP 16
+dbpf $(SYS)-$(DEVICE):DlyGen9-Evt-Trig0-SP $(SYNC_TRIG_EVT)
 dbpf $(SYS)-$(DEVICE):DlyGen9-Width-SP 10
 
 # Connect FP09 to Pulser 9
