@@ -35,9 +35,10 @@ epicsEnvSet("DET_CLK_RST_EVT", "15")
 epicsEnvSet("DET_RST_EVT", "15")
 epicsEnvSet("SYNC_EVNT_LETTER", "EvtF")
 epicsEnvSet("SYNC_TRIG_EVT", "16")
+epicsEnvSet("NANO_DELTA", "1000000000")
 
 epicsEnvSet("COM1_USB_DEV_NUM", "0")
-epicsEnvSet("COM2_USB_DEV_NUM", "2")
+epicsEnvSet("COM2_USB_DEV_NUM", "1")
 
 
 
@@ -61,6 +62,7 @@ dbpf $(SYS)-$(DEVICE):DC-Tgt-SP 100
 # Connect prescaler reset to event $(DET_CLK_RST_EVT)
 dbpf $(SYS)-$(DEVICE):Evt-ResetPS-SP $(DET_CLK_RST_EVT)
 
+
 # Connect FP08 to PS0
 dbpf $(SYS)-$(DEVICE):OutFPUV08-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV08-Src-SP 40 
@@ -83,9 +85,52 @@ dbpf $(SYS)-$(DEVICE):OutFPUV11-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV11-Src-SP 9 
 
 # Connect FP2 to Pulser 9
-dbpf $(SYS)-$(DEVICE):OutFPUV02-Ena-SP 1
-dbpf $(SYS)-$(DEVICE):OutFPUV02-Src-SP 9 
+#dbpf $(SYS)-$(DEVICE):OutFPUV02-Ena-SP 1
+#dbpf $(SYS)-$(DEVICE):OutFPUV02-Src-SP 9 
 
-dbpf $(SYS)-$(DEVICE):OutFPUV03-Ena-SP 1
-dbpf $(SYS)-$(DEVICE):OutFPUV03-Src-SP 40 
+# Connect FP3 to Pulser 9
+#dbpf $(SYS)-$(DEVICE):OutFPUV03-Ena-SP 1
+#dbpf $(SYS)-$(DEVICE):OutFPUV03-Src-SP 40 
+
+
+######## load the sync sequence ######
+
+# Connect event 125 to pulser 8
+dbpf $(SYS)-$(DEVICE):DlyGen8-Evt-Trig0-SP 125
+dbpf $(SYS)-$(DEVICE):DlyGen8-Width-SP 1
+
+# Connect FP2 to Pulser 8
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Src-SP 8
+
+
+dbpf $(SYS)-$(DEVICE):SoftSeq0-Disable-Cmd 1
+
+
+dbpf $(SYS)-$(DEVICE):SoftSeq0-Unload-Cmd 1
+dbpf $(SYS)-$(DEVICE):SoftSeq0-Load-Cmd 1
+
+#Use nanoseconds
+dbpf $(SYS)-$(DEVICE):SoftSeq0-TsResolution-Sel  "3"
+
+#connect the sequence to pulser 8
+dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel 8
+
+#connect the sequence to software trigger
+#dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Scale-Sel "Software"
+
+dbpf $(SYS)-$(DEVICE):SoftSeq0-RunMode-Sel "Single"
+
+
+#add sequence events and corresponding tick lists
+system "/bin/bash /epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
+
+#dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
+
+
+
+
+ 
+#perform sync one next event 125
+dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
 
