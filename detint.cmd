@@ -26,7 +26,12 @@ dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=ID-H,
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=ID-M, 	DESC=device ID_M,		OFF=3, 	PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=ID-L, 	DESC=device ID_L,		OFF=4, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=LPBK, 	DESC=loopback test register,	OFF=5, 	PRO=ics-dg.proto")
-dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=RST, 	DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+
+
+#dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=RST, 	DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+dbLoadRecords("reset_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+
+
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=ADC-SEL,	DESC=ADC channel select,	OFF=7, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=ADC-DEC,	DESC=ADC DEC,			OFF=8, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=BPZ,	DESC=ADC Bypass Zeros,		OFF=9, 	PRO=ics-dg.proto")
@@ -73,7 +78,8 @@ dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=STATU
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=STATUS2,	DESC=Status 2,			OFF=50,	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=CLKSEL,	DESC=internal or external clk,	OFF=51,	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=PAYSEL,	DESC=Payload select, ADC or TST,OFF=52,	PRO=ics-dg.proto")
-
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=TSU, 	DESC=TS MSB RBV,		OFF=53, 	PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), REG=TSL, 	DESC=TS LSB RBV,		OFF=54, 	PRO=ics-dg.proto")
 
 
 #Load register map for device 2
@@ -84,7 +90,11 @@ dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=ID-H,
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=ID-M, 	DESC=device ID_M,		OFF=3, 	PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=ID-L, 	DESC=device ID_L,		OFF=4, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=LPBK, 	DESC=loopback test register,	OFF=5, 	PRO=ics-dg.proto")
-dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=RST, 	DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+
+#dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=RST, 	DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+
+dbLoadRecords("reset_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), DESC=reset/enable vector,	OFF=6,	PRO=ics-dg.proto")
+
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=ADC-SEL,	DESC=ADC channel select,	OFF=7, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=ADC-DEC,	DESC=ADC DEC,			OFF=8, 	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=BPZ,	DESC=ADC Bypass Zeros,		OFF=9, 	PRO=ics-dg.proto")
@@ -131,6 +141,8 @@ dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=STATU
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=STATUS2,	DESC=Status 2,			OFF=50,	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=CLKSEL,	DESC=internal or external clk,	OFF=51,	PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=PAYSEL,	DESC=Payload select, ADC or TST,OFF=52,	PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=TSU, 	DESC=TS MSB RBV,		OFF=53, 	PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), REG=TSL, 	DESC=TS LSB RBV,		OFF=54, 	PRO=ics-dg.proto")
 
 
 #dbLoadRecords("timestamp_sync.db", "SYS=$(SYS), DEV1=$(DEV1),EVR=$(EVR),TSEVT=$(SYNC_EVNT_LETTER), CODE=$(SYNC_EVNT), RST_ENA_DEL=0.1, ENA_TS_DEL=0.1, N_SEC_DELTA=$(N_SEC_TICKS), COM1=$(COM2), PRO=ics-dg.proto")
