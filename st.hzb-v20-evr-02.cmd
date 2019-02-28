@@ -27,7 +27,7 @@ epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
 #iocshLoad("$(evr-timestamp-buffer_DIR)/evr-timestamp-buffer.iocsh", "CHIC_SYS=$(CHIC_SYS), CHIC_DEV=$(CHIC_DEV), CHOP_DRV=$(CHOP_DRV), SYS=$(SYS)")
 
 ############# -------- Detector Readout Interface ----------------- ##################
-epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02-cmd") 
+epicsEnvSet("DETINT_CMD_TOP","/home/jonas/hzb-v20-evr-02-cmd") 
 #epicsEnvSet("DETINT_DB_TOP", "$(E3_MODULES)/e3-detectorinterface/m-epics-detectorinterface-dev/db")
 epicsEnvSet("STREAM_PROTOCOL_PATH","/epics/base-7.0.2/require/3.0.4/siteApps/dmsc_detector_interface/master/db")
 
