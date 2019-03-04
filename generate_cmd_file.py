@@ -17,7 +17,7 @@ asynSetOption ("$(COM{port_nr})", 0, "stop", "1")\n"""
     
     return_str += "\n"
     
-    db_template = """dbLoadRecords("{db_file}", "SYS=$(SYS), DEV=$(DEV{device_nr}), COM=$(COM{device_nr}), {extra_fields}PRO=ics-dg-o.proto")\n"""
+    db_template = """dbLoadRecords("{db_file}", "SYS=$(SYS), DEV=$(DEV{device_nr}), COM=$(COM{device_nr}), {extra_fields}PRO=ics-dg.proto")\n"""
     
     for item in reg_map:
         list_of_keys = [key for key in item]
@@ -63,4 +63,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
