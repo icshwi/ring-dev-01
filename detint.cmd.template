@@ -1,0 +1,8 @@
+#dbLoadRecords("timestamp_sync.db", "SYS=$(SYS), DEV1=$(DEV1),EVR=$(EVR),TSEVT=$(SYNC_EVNT_LETTER), CODE=$(SYNC_EVNT), RST_ENA_DEL=0.1, ENA_TS_DEL=0.1, N_SEC_DELTA=$(N_SEC_TICKS), COM1=$(COM2), PRO=ics-dg.proto")
+dbLoadRecords("timestamp_sync_2.db", "SYS=$(SYS), DEV1=$(DEV1), DEV2=$(DEV2), EVR=$(EVR),TSEVT=$(SYNC_EVNT_LETTER), CODE=$(SYNC_EVNT), RST_ENA_DEL=0.1, ENA_TS_DEL=0.1, N_SEC_DELTA=$(N_SEC_TICKS), COM1=$(COM1),COM2=$(COM2), PRO=ics-dg.proto")
+dbLoadRecords("check_timestamp_2.db", "SYS=$(SYS), DEV1=$(DEV1), DEV2=$(DEV2), EVR=$(EVR),TSEVT=EvtG, CODE=16")
+
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=15")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=16")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=17")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=14")
