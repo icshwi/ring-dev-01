@@ -37,13 +37,11 @@ epicsEnvSet("SYNC_EVNT_LETTER", "EvtF")
 epicsEnvSet("SYNC_TRIG_EVT", "16")
 epicsEnvSet("NANO_DELTA", "1000000000")
 
-epicsEnvSet("COM1_USB_DEV_NUM", "0")
-epicsEnvSet("COM2_USB_DEV_NUM", "1")
-
-
-
 # Load the detector interface module
-iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2,COM1_USB_DEV_NUM=$(COM1_USB_DEV_NUM),COM2_USB_DEV_NUM=$(COM2_USB_DEV_NUM), SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=$(NANO_DELTA),SCAN_EVNT=3 ")
+
+system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports ttyUSB0 ttyUSB1"
+iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
+
 
 
 
