@@ -37,13 +37,13 @@ epicsEnvSet("SYNC_EVNT_LETTER", "EvtF")
 epicsEnvSet("SYNC_TRIG_EVT", "16")
 epicsEnvSet("NANO_DELTA", "1000000000")
 
-epicsEnvSet("COM1_USB_DEV_NUM", "2")
-epicsEnvSet("COM2_USB_DEV_NUM", "3")
+epicsEnvSet("COM1_USB_DEV_NUM", "0")
+epicsEnvSet("COM2_USB_DEV_NUM", "1")
 
 
 
 # Load the detector interface module
-iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2,COM1_USB_DEV_NUM=$(COM1_USB_DEV_NUM),COM2_USB_DEV_NUM=$(COM2_USB_DEV_NUM), SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
+iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2,COM1_USB_DEV_NUM=$(COM1_USB_DEV_NUM),COM2_USB_DEV_NUM=$(COM2_USB_DEV_NUM), SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=$(NANO_DELTA),SCAN_EVNT=3 ")
 
 
 
@@ -91,6 +91,15 @@ dbpf $(SYS)-$(DEVICE):OutFPUV13-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV13-Src-SP 9 
 
 
+
+
+# Map pulser 7 to event code 125
+dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
+dbpf $(SYS)-$(DEVICE):DlyGen7-Width-SP 10
+
+
+
+
 ######## load the sync sequence ######
 
 dbpf $(SYS)-$(DEVICE):SoftSeq0-Disable-Cmd 1
@@ -101,7 +110,9 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-Load-Cmd 1
 dbpf $(SYS)-$(DEVICE):SoftSeq0-TsResolution-Sel  "3"
 
 #connect the sequence to software trigger
-dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Scale-Sel "Software"
+#dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Scale-Sel "Software"
+#connect the sequence to software trigger
+dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel "Pulser 7"
 
 dbpf $(SYS)-$(DEVICE):SoftSeq0-RunMode-Sel "Single"
 
@@ -111,5 +122,5 @@ system "/bin/bash /home/root/epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
 dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
  
 #perform sync one next event 125
-dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
+#dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
 
