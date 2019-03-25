@@ -1,13 +1,13 @@
 #!/bin/bash
 #export IOC_EXEC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 export IOC_NAME=hzb-v20-evr-02
-export IOC_EXEC_DIR=/epics/iocs/cmds/$IOC_NAME-cmd
+export IOC_EXEC_DIR=/home/root/epics/iocs/cmds/$IOC_NAME-cmd
 export VAR_DIR="/var"
 export BASE_VER="7.0.1.1"
 export REQUIRE_VER="3.0.4"
-export E3_BIN_DIR="/epics/base-$BASE_VER/require/$REQUIRE_VER/bin"
+export E3_BIN_DIR="/home/root/epics/base-$BASE_VER/require/$REQUIRE_VER/bin"
 export PROCSERV="/usr/bin/procServ"
-export PROCSERV_PORT=2002
+export PROCSERV_PORT=2003
 export PROCSERV_RUN_DIR=$IOC_NAME
 export PROCSERV_LOG_FILE=out-HZB-V20-EVR-02
 
