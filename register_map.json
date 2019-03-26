@@ -1,10 +1,10 @@
 [
   {"db_file":"detector_controls.db"},
-  {"db_file":"ro_register.db",  "REG":"GIT",        "DESC":"git hash",                       "OFF": 0},
+  {"db_file":"ro_hex_register.db","REG":"GIT",       "DESC":"git hash", "SCAN":"Passive",    "OFF": 0},
   {"db_file":"ro_register.db",  "REG":"BUILD",      "DESC":"build time",                     "OFF": 1},
-  {"db_file":"ro_register.db",  "REG":"ID-H",       "DESC":"device ID_H",                    "OFF": 2},
-  {"db_file":"ro_register.db",  "REG":"ID-M",       "DESC":"device ID_M",                    "OFF": 3},
-  {"db_file":"ro_register.db",  "REG":"ID-L",       "DESC":"device ID_L",                    "OFF": 4},
+  {"db_file":"ro_hex_register.db","REG":"ID-H",       "DESC":"device ID_H", "SCAN":"Passive","OFF": 2},
+  {"db_file":"ro_hex_register.db","REG":"ID-M",       "DESC":"device ID_M", "SCAN":"Passive","OFF": 3},
+  {"db_file":"ro_hex_register.db","REG":"ID-L",       "DESC":"device ID_L", "SCAN":"Passive","OFF": 4},
   {"db_file":"rw_register.db",  "REG":"LPBK",       "DESC":"loopback test register",         "OFF": 5},
   {"db_file":"reset_register.db",                                                            "OFF": 6},
   {"db_file":"rw_register.db",  "REG":"ADC-SEL",    "DESC":"ADC channel select",             "OFF": 7},
@@ -46,9 +46,9 @@
   {"db_file":"ro_register.db",  "REG":"PKCNT",      "DESC":"Packet Count",                   "OFF":45},
   {"db_file":"ro_2x16bit_register.db","REG":"SNAP","DESC":"ADC snap value ch","NR1":"1","NR2":"2","OFF":46},
   {"db_file":"ro_2x16bit_register.db","REG":"SNAP","DESC":"ADC snap value ch","NR1":"3","NR2":"4","OFF":47},
-  {"db_file":"ro_register.db",  "REG":"STATUS0",    "DESC":"Status 0",                       "OFF":48},
-  {"db_file":"ro_register.db",  "REG":"STATUS1",    "DESC":"Status 1",                       "OFF":49},
-  {"db_file":"ro_register.db",  "REG":"STATUS2",    "DESC":"Status 2",                       "OFF":50},
+  {"db_file":"ro_hex_register.db","REG":"STATUS0", "DESC":"Status 0", "SCAN":"10 second",    "OFF":48},
+  {"db_file":"ro_hex_register.db","REG":"STATUS1", "DESC":"Status 1", "SCAN":"10 second",    "OFF":49},
+  {"db_file":"ro_hex_register.db","REG":"STATUS2", "DESC":"Status 2", "SCAN":"10 second",    "OFF":50},
   {"db_file":"clock_select.db",                                                              "OFF":51},
   {"db_file":"payload_select.db",                                                            "OFF":52}
 ]
