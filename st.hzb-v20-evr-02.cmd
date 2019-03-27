@@ -39,7 +39,7 @@ epicsEnvSet("NANO_DELTA", "1000000000")
 
 # Load the detector interface module
 
-system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports ttyUSB0 ttyUSB1"
+system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports ttyUSB2 ttyUSB3"
 iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
 
 
@@ -84,6 +84,10 @@ dbpf $(SYS)-$(DEVICE):OutFPUV11-Src-SP 9
 dbpf $(SYS)-$(DEVICE):OutFPUV12-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV12-Src-SP 40 
 
+# Connect FP09 to PS0
+dbpf $(SYS)-$(DEVICE):OutFPUV09-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV09-Src-SP 40 
+
 # Connect FP13 to Pulser 9
 dbpf $(SYS)-$(DEVICE):OutFPUV13-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV13-Src-SP 9 
@@ -96,7 +100,13 @@ dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
 dbpf $(SYS)-$(DEVICE):DlyGen7-Width-SP 10
 
 
+# Connect FP2 to Pulser 9
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Src-SP 9 
 
+# Connect FP3 to Pulser 9
+dbpf $(SYS)-$(DEVICE):OutFPUV03-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV03-Src-SP 9 
 
 ######## load the sync sequence ######
 

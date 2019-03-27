@@ -50,5 +50,7 @@
   {"db_file":"ro_register.db",  "REG":"STATUS1",    "DESC":"Status 1",                       "OFF":49},
   {"db_file":"ro_register.db",  "REG":"STATUS2",    "DESC":"Status 2",                       "OFF":50},
   {"db_file":"rw_register.db",  "REG":"CLKSEL",     "DESC":"internal or external clk",       "OFF":51},
-  {"db_file":"rw_register.db",  "REG":"PAYSEL",     "DESC":"Payload select, ADC or TST",     "OFF":52}
+  {"db_file":"rw_register.db",  "REG":"PAYSEL",     "DESC":"Payload select, ADC or TST",     "OFF":52},
+  {"db_file":"ro_register.db",  "REG":"TSU",     	"DESC":"Timestamp Upper",			     "OFF":53},
+  {"db_file":"ro_register.db",  "REG":"TSL",     	"DESC":"Timestamp Lower",			     "OFF":54}
 ]
