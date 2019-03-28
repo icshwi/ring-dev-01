@@ -1,5 +1,3 @@
-#@Will Smith - uncomment if you want the timestamp buffer database
-#require evr-timestamp-buffer,2.5.0
 require dmsc_detector_interface,develop
 require stream,2.7.14p
 
@@ -39,7 +37,7 @@ epicsEnvSet("NANO_DELTA", "1000000000")
 
 # Load the detector interface module
 
-system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports ttyUSB0 ttyUSB1"
+system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports ttyUSB2 ttyUSB3"
 iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
 
 
@@ -122,3 +120,7 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
 #perform sync one next event 125
 #dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
 
+
+dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
+dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 1000000000 
+									  
