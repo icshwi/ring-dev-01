@@ -82,6 +82,10 @@ dbpf $(SYS)-$(DEVICE):OutFPUV11-Src-SP 9
 dbpf $(SYS)-$(DEVICE):OutFPUV12-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV12-Src-SP 40 
 
+# Connect FP09 to PS0
+dbpf $(SYS)-$(DEVICE):OutFPUV09-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV09-Src-SP 40 
+
 # Connect FP13 to Pulser 9
 dbpf $(SYS)-$(DEVICE):OutFPUV13-Ena-SP 1
 dbpf $(SYS)-$(DEVICE):OutFPUV13-Src-SP 9 
@@ -94,7 +98,13 @@ dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
 dbpf $(SYS)-$(DEVICE):DlyGen7-Width-SP 10
 
 
+# Connect FP2 to Pulser 9
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV02-Src-SP 9 
 
+# Connect FP3 to Pulser 9
+dbpf $(SYS)-$(DEVICE):OutFPUV03-Ena-SP 1
+dbpf $(SYS)-$(DEVICE):OutFPUV03-Src-SP 9 
 
 ######## load the sync sequence ######
 

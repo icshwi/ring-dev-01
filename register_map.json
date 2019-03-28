@@ -51,7 +51,7 @@
   {"db_file":"ro_hex_register.db","REG":"STATUS2", "DESC":"Status 2", "SCAN":"10 second",    "OFF":50},
   {"db_file":"clock_select.db",                                                              "OFF":51},
   {"db_file":"payload_select.db",                                                            "OFF":52},
-  {"db_file":"ro_register.db",  "REG":"TSU",       "DESC":"Timestamp S",           			 "OFF":53},
-  {"db_file":"ro_register.db",  "REG":"TSL",       "DESC":"Timestamp N",                 	 "OFF":54}
-  
+  {"db_file":"ro_register.db",  "REG":"TSU",     	"DESC":"Timestamp Upper",			     "OFF":53},
+  {"db_file":"ro_register.db",  "REG":"TSL",     	"DESC":"Timestamp Lower",			     "OFF":54}
+
 ]

@@ -6,6 +6,7 @@ asynSetOption ("$(COM1)", 0, "bits", "8")
 asynSetOption ("$(COM1)", 0, "parity", "none")
 asynSetOption ("$(COM1)", 0, "stop", "1")
 
+<<<<<<< HEAD
 dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), EVR=EVR-01, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=0, SCAN=Passive, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
@@ -17,6 +18,19 @@ dbLoadRecords("reset_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=6,
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=7, REG=ADC-SEL, DESC=ADC channel select, PRO=ics-dg.proto")
 dbLoadRecords("oversampling.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=8, PRO=ics-dg.proto")
 dbLoadRecords("sampling_mode.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=9, PRO=ics-dg.proto")
+=======
+dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=0, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=2, REG=ID-H, DESC=device ID_H, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=3, REG=ID-M, DESC=device ID_M, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=4, REG=ID-L, DESC=device ID_L, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=5, REG=LPBK, DESC=loopback test register, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=6, REG=RST, DESC=reset/enable vector, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=7, REG=ADC-SEL, DESC=ADC channel select, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=8, REG=ADC-DEC, DESC=ADC DEC, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=9, REG=BPZ, DESC=ADC Bypass Zeros, PRO=ics-dg.proto")
+>>>>>>> utgard
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=10, REG=CH0-T, DESC=ADC Ch0 Threshold, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=11, REG=CH1-T, DESC=ADC Ch1 Threshold, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=12, REG=CH2-T, DESC=ADC Ch2 Threshold, PRO=ics-dg.proto")
@@ -33,6 +47,7 @@ dbLoadRecords("rw_ip_address.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=24,
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=25, REG=UDPS, DESC=UDP Source Port, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=26, REG=UDPD, DESC=UDP Destination Port, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=27, REG=PTO, DESC=Packet Timeout, PRO=ics-dg.proto")
+<<<<<<< HEAD
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=28, CH=1, PRO=ics-dg.proto")
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=29, CH=2, PRO=ics-dg.proto")
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=30, CH=3, PRO=ics-dg.proto")
@@ -41,11 +56,22 @@ dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=32, CH=
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=33, CH=2, PRO=ics-dg.proto")
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=34, CH=3, PRO=ics-dg.proto")
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=35, CH=4, PRO=ics-dg.proto")
+=======
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=28, REG=Gain0, DESC=Ch 0 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=29, REG=Gain1, DESC=Ch 1 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=30, REG=Gain2, DESC=Ch 2 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=31, REG=Gain3, DESC=Ch 3 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=32, REG=Off0, DESC=Ch 0 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=33, REG=Off1, DESC=Ch 1 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=34, REG=Off2, DESC=Ch 2 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=35, REG=Off3, DESC=Ch 3 Offset, PRO=ics-dg.proto")
+>>>>>>> utgard
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=36, REG=SPI, DESC=ADC SPI, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=37, REG=SI570-B, DESC=SI570 base, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=38, REG=SI570-D, DESC=SI570 data, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=39, REG=SI570-T, DESC=SI570 trig, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=40, REG=LEDSEL, DESC=LED select, PRO=ics-dg.proto")
+<<<<<<< HEAD
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=41, NR2=2, NR1=1, REG=PCNT, DESC=Pulse count ch, PRO=ics-dg.proto")
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=42, NR2=4, NR1=3, REG=PCNT, DESC=Pulse count ch, PRO=ics-dg.proto")
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=43, NR2=2, NR1=1, REG=FCNT, DESC=Frame count ch, PRO=ics-dg.proto")
@@ -58,6 +84,22 @@ dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=4
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=50, SCAN=10 second, REG=STATUS2, DESC=Status 2, PRO=ics-dg.proto")
 dbLoadRecords("clock_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=51, PRO=ics-dg.proto")
 dbLoadRecords("payload_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=52, PRO=ics-dg.proto")
+=======
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=41, REG=PCNT01, DESC=Pulse count C01, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=42, REG=PCNT23, DESC=Pulse count C23, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=43, REG=FCNT01, DESC=FRM count C01, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=44, REG=FCNT23, DESC=FRM count C23, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=45, REG=PKCNT, DESC=Packet Count, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=46, REG=SNAP01, DESC=C01 Snap, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=47, REG=SNAP23, DESC=C23 Snap, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=48, REG=STATUS0, DESC=Status 0, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=49, REG=STATUS1, DESC=Status 1, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=50, REG=STATUS2, DESC=Status 2, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=51, REG=CLKSEL, DESC=internal or external clk, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=52, REG=PAYSEL, DESC=Payload select, ADC or TST, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=53, REG=TSU, DESC=Timestamp Upper, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=54, REG=TSL, DESC=Timestamp Lower, PRO=ics-dg.proto")
+>>>>>>> utgard
 
 
 drvAsynSerialPortConfigure "$(COM2)", "/dev/ttyUSB3"
@@ -68,6 +110,7 @@ asynSetOption ("$(COM2)", 0, "bits", "8")
 asynSetOption ("$(COM2)", 0, "parity", "none")
 asynSetOption ("$(COM2)", 0, "stop", "1")
 
+<<<<<<< HEAD
 dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), EVR=EVR-01, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=0, SCAN=Passive, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
@@ -79,6 +122,19 @@ dbLoadRecords("reset_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=6,
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=7, REG=ADC-SEL, DESC=ADC channel select, PRO=ics-dg.proto")
 dbLoadRecords("oversampling.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=8, PRO=ics-dg.proto")
 dbLoadRecords("sampling_mode.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=9, PRO=ics-dg.proto")
+=======
+dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=0, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=2, REG=ID-H, DESC=device ID_H, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=3, REG=ID-M, DESC=device ID_M, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=4, REG=ID-L, DESC=device ID_L, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=5, REG=LPBK, DESC=loopback test register, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=6, REG=RST, DESC=reset/enable vector, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=7, REG=ADC-SEL, DESC=ADC channel select, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=8, REG=ADC-DEC, DESC=ADC DEC, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=9, REG=BPZ, DESC=ADC Bypass Zeros, PRO=ics-dg.proto")
+>>>>>>> utgard
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=10, REG=CH0-T, DESC=ADC Ch0 Threshold, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=11, REG=CH1-T, DESC=ADC Ch1 Threshold, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=12, REG=CH2-T, DESC=ADC Ch2 Threshold, PRO=ics-dg.proto")
@@ -95,6 +151,7 @@ dbLoadRecords("rw_ip_address.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=24,
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=25, REG=UDPS, DESC=UDP Source Port, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=26, REG=UDPD, DESC=UDP Destination Port, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=27, REG=PTO, DESC=Packet Timeout, PRO=ics-dg.proto")
+<<<<<<< HEAD
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=28, CH=1, PRO=ics-dg.proto")
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=29, CH=2, PRO=ics-dg.proto")
 dbLoadRecords("channel_gain.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=30, CH=3, PRO=ics-dg.proto")
@@ -103,11 +160,22 @@ dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=32, CH=
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=33, CH=2, PRO=ics-dg.proto")
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=34, CH=3, PRO=ics-dg.proto")
 dbLoadRecords("ch_offset.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=35, CH=4, PRO=ics-dg.proto")
+=======
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=28, REG=Gain0, DESC=Ch 0 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=29, REG=Gain1, DESC=Ch 1 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=30, REG=Gain2, DESC=Ch 2 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=31, REG=Gain3, DESC=Ch 3 Gain, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=32, REG=Off0, DESC=Ch 0 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=33, REG=Off1, DESC=Ch 1 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=34, REG=Off2, DESC=Ch 2 Offset, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=35, REG=Off3, DESC=Ch 3 Offset, PRO=ics-dg.proto")
+>>>>>>> utgard
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=36, REG=SPI, DESC=ADC SPI, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=37, REG=SI570-B, DESC=SI570 base, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=38, REG=SI570-D, DESC=SI570 data, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=39, REG=SI570-T, DESC=SI570 trig, PRO=ics-dg.proto")
 dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=40, REG=LEDSEL, DESC=LED select, PRO=ics-dg.proto")
+<<<<<<< HEAD
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=41, NR2=2, NR1=1, REG=PCNT, DESC=Pulse count ch, PRO=ics-dg.proto")
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=42, NR2=4, NR1=3, REG=PCNT, DESC=Pulse count ch, PRO=ics-dg.proto")
 dbLoadRecords("ro_2x16bit_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=43, NR2=2, NR1=1, REG=FCNT, DESC=Frame count ch, PRO=ics-dg.proto")
@@ -127,3 +195,29 @@ dbLoadRecords("evr_detector_controls.db", "SYS=$(SYS), EVR=$(EVR), TSEVT=$(SYNC_
 
 
 
+=======
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=41, REG=PCNT01, DESC=Pulse count C01, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=42, REG=PCNT23, DESC=Pulse count C23, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=43, REG=FCNT01, DESC=FRM count C01, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=44, REG=FCNT23, DESC=FRM count C23, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=45, REG=PKCNT, DESC=Packet Count, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=46, REG=SNAP01, DESC=C01 Snap, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=47, REG=SNAP23, DESC=C23 Snap, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=48, REG=STATUS0, DESC=Status 0, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=49, REG=STATUS1, DESC=Status 1, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=50, REG=STATUS2, DESC=Status 2, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=51, REG=CLKSEL, DESC=internal or external clk, PRO=ics-dg.proto")
+dbLoadRecords("rw_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=52, REG=PAYSEL, DESC=Payload select, ADC or TST, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=53, REG=TSU, DESC=Timestamp Upper, PRO=ics-dg.proto")
+dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=54, REG=TSL, DESC=Timestamp Lower, PRO=ics-dg.proto")
+
+
+#dbLoadRecords("timestamp_sync.db", "SYS=$(SYS), DEV1=$(DEV1),EVR=$(EVR),TSEVT=$(SYNC_EVNT_LETTER), CODE=$(SYNC_EVNT), RST_ENA_DEL=0.1, ENA_TS_DEL=0.1, N_SEC_DELTA=$(N_SEC_TICKS), COM1=$(COM2), PRO=ics-dg.proto")
+dbLoadRecords("timestamp_sync_2.db", "SYS=$(SYS), DEV1=$(DEV1), DEV2=$(DEV2), EVR=$(EVR),TSEVT=$(SYNC_EVNT_LETTER), CODE=$(SYNC_EVNT), RST_ENA_DEL=0.1, ENA_TS_DEL=0.1, N_SEC_DELTA=$(N_SEC_TICKS), COM1=$(COM1),COM2=$(COM2), PRO=ics-dg.proto")
+dbLoadRecords("check_timestamp_2.db", "SYS=$(SYS), DEV1=$(DEV1), DEV2=$(DEV2), EVR=$(EVR),TSEVT=EvtG, CODE=16")
+
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=15")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=16")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=17")
+dbLoadRecords("softEventCounter.db", "SYS=$(SYS), D=$(DEVICE), CODE=14")
+>>>>>>> utgard
