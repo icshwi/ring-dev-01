@@ -131,6 +131,6 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
 #dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
 
 
-dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
+#dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
 dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 1000000000 
 									  
