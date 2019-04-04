@@ -1,5 +1,5 @@
 [
-  {"db_file":"detector_controls.db","EVR":"EVR-01", "SYNC_EVNT":16, "CLK_RST_EVNT":15},
+  {"db_file":"detector_controls.db","EVR":"EVR-01", "SYNC_EVNT":16, "CLK_RST_EVNT":15, "TSU-OFF":53, "TSL-OFF":54},
   {"db_file":"ro_hex_register.db","REG":"GIT",       "DESC":"git hash", "SCAN":"Passive",    "OFF": 0},
   {"db_file":"ro_register.db",  "REG":"BUILD",      "DESC":"build time",                     "OFF": 1},
   {"db_file":"ro_hex_register.db","REG":"ID-H",       "DESC":"device ID_H", "SCAN":"Passive","OFF": 2},
@@ -50,8 +50,7 @@
   {"db_file":"ro_hex_register.db","REG":"STATUS1", "DESC":"Status 1", "SCAN":"10 second",    "OFF":49},
   {"db_file":"ro_register.db","REG":"STATUS2", "DESC":"Status 2",    "OFF":50},
   {"db_file":"clock_select.db",                                                              "OFF":51},
-  {"db_file":"payload_select.db",                                                            "OFF":52},
-  {"db_file":"ro_register.db",  "REG":"TSU",     	"DESC":"Timestamp Upper",			     "OFF":53},
-  {"db_file":"ro_register.db",  "REG":"TSL",     	"DESC":"Timestamp Lower",			     "OFF":54}
+  {"db_file":"payload_select.db",                                                            "OFF":52}
+
 
 ]

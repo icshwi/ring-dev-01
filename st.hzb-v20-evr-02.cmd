@@ -112,25 +112,26 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-Disable-Cmd 1
 dbpf $(SYS)-$(DEVICE):SoftSeq0-Unload-Cmd 1
 dbpf $(SYS)-$(DEVICE):SoftSeq0-Load-Cmd 1
 
-#Use nanoseconds
-dbpf $(SYS)-$(DEVICE):SoftSeq0-TsResolution-Sel  "3"
+#Use ticks
+dbpf $(SYS)-$(DEVICE):SoftSeq0-TsResolution-Sel  "0"
+dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
 
 #connect the sequence to software trigger
 #dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Scale-Sel "Software"
 #connect the sequence to software trigger
 dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel "Pulser 7"
 
-dbpf $(SYS)-$(DEVICE):SoftSeq0-RunMode-Sel "Single"
+#dbpf $(SYS)-$(DEVICE):SoftSeq0-RunMode-Sel "Single"
 
 #add sequence events and corresponding tick lists
-system "/bin/bash /home/root/epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
+#system "/bin/bash /home/root/epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
 
-dbpf $(SYS)-$(DEVICE):SoftSeq0-Commit-Cmd 1
+
  
 #perform sync one next event 125
 #dbpf $(SYS)-$(DEVICE):SoftSeq0-Enable-Cmd 1
 
 
 #dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
-dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 1000000000 
+dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 88052500 
 									  

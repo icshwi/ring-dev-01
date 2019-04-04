@@ -6,7 +6,7 @@ asynSetOption ("$(COM1)", 0, "bits", "8")
 asynSetOption ("$(COM1)", 0, "parity", "none")
 asynSetOption ("$(COM1)", 0, "stop", "1")
 
-dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), EVR=EVR-01, CLK_RST_EVNT=15, SYNC_EVNT=16, PRO=ics-dg.proto")
+dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), SYNC_EVNT=16, TSU-OFF=53, CLK_RST_EVNT=15, TSL-OFF=54, EVR=EVR-01, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=0, SCAN=Passive, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=2, SCAN=Passive, REG=ID-H, DESC=device ID_H, PRO=ics-dg.proto")
@@ -58,8 +58,6 @@ dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=4
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=50, REG=STATUS2, DESC=Status 2, PRO=ics-dg.proto")
 dbLoadRecords("clock_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=51, PRO=ics-dg.proto")
 dbLoadRecords("payload_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=52, PRO=ics-dg.proto")
-dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=53, REG=TSU, DESC=Timestamp Upper, PRO=ics-dg.proto")
-dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=54, REG=TSL, DESC=Timestamp Lower, PRO=ics-dg.proto")
 
 
 drvAsynSerialPortConfigure "$(COM2)", "/dev/ttyUSB3"
@@ -70,7 +68,7 @@ asynSetOption ("$(COM2)", 0, "bits", "8")
 asynSetOption ("$(COM2)", 0, "parity", "none")
 asynSetOption ("$(COM2)", 0, "stop", "1")
 
-dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), EVR=EVR-01, CLK_RST_EVNT=15, SYNC_EVNT=16, PRO=ics-dg.proto")
+dbLoadRecords("detector_controls.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), SYNC_EVNT=16, TSU-OFF=53, CLK_RST_EVNT=15, TSL-OFF=54, EVR=EVR-01, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=0, SCAN=Passive, REG=GIT, DESC=git hash, PRO=ics-dg.proto")
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=1, REG=BUILD, DESC=build time, PRO=ics-dg.proto")
 dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=2, SCAN=Passive, REG=ID-H, DESC=device ID_H, PRO=ics-dg.proto")
@@ -122,8 +120,6 @@ dbLoadRecords("ro_hex_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=4
 dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=50, REG=STATUS2, DESC=Status 2, PRO=ics-dg.proto")
 dbLoadRecords("clock_select.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=51, PRO=ics-dg.proto")
 dbLoadRecords("payload_select.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=52, PRO=ics-dg.proto")
-dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=53, REG=TSU, DESC=Timestamp Upper, PRO=ics-dg.proto")
-dbLoadRecords("ro_register.db", "SYS=$(SYS), DEV=$(DEV2), COM=$(COM2), OFF=54, REG=TSL, DESC=Timestamp Lower, PRO=ics-dg.proto")
 
 
 dbLoadRecords("evr_detector_controls.db", "SYS=$(SYS), EVR=$(EVR), TSEVT=$(SYNC_EVNT_LETTER),SYNC_EVNT=$(SYNC_TRIG_EVT)")
