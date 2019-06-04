@@ -1,13 +1,13 @@
-require dmsc_detector_interface,develop
-require stream,2.7.14p
+require dmsc_detector_interface,master
+require stream,2.8.8
 
 epicsEnvSet("SYS", "ESSIP-DET:TS")
-epicsEnvSet("PCI_SLOT", "5:0.0")
+epicsEnvSet("PCI_SLOT", "1:0.0")
 epicsEnvSet("DEVICE", "EVR-01")
 epicsEnvSet("EVR", "$(DEVICE)")
 epicsEnvSet("MRF_HW_DB", "evr-pcie-300dc-ess.db")
-epicsEnvSet("E3_MODULES", "/home/root/epics/iocs/e3")
-epicsEnvSet("EPICS_CMDS", "/home/root/epics/iocs/cmds")
+epicsEnvSet("E3_MODULES", "/epics/iocs/e3")
+epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
 
 ######## Temporary until chopper group ###########
 ######## changes PV names              ###########
@@ -25,9 +25,9 @@ dbLoadRecords("$(MRF_HW_DB)","EVR=$(EVR),SYS=$(SYS),D=$(DEVICE),FEVT=88.0525,PIN
 #iocshLoad("$(evr-timestamp-buffer_DIR)/evr-timestamp-buffer.iocsh", "CHIC_SYS=$(CHIC_SYS), CHIC_DEV=$(CHIC_DEV), CHOP_DRV=$(CHOP_DRV), SYS=$(SYS)")
 
 ############# -------- Detector Readout Interface ----------------- ##################
-epicsEnvSet("DETINT_CMD_TOP","/home/root/epics/iocs/cmds/hzb-v20-evr-02-cmd") 
+epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02-cmd") 
 #epicsEnvSet("DETINT_DB_TOP", "$(E3_MODULES)/e3-detectorinterface/m-epics-detectorinterface-dev/db")
-epicsEnvSet("STREAM_PROTOCOL_PATH","/home/root/epics/base-7.0.1.1/require/3.0.4/siteApps/dmsc_detector_interface/develop/db")
+epicsEnvSet("STREAM_PROTOCOL_PATH","/epics/base-7.0.2/require/3.0.5/siteApps/dmsc_detector_interface/master/db")
 
 epicsEnvSet("DET_CLK_RST_EVT", "15")
 epicsEnvSet("DET_RST_EVT", "15")
