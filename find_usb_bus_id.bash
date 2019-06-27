@@ -33,12 +33,14 @@ USB_BUS_NUMB="$(echo ${USB_BUS_NUM} | awk '{print substr($0,9,7)}')"
 echo ${USB_BUS_NUMA}
 echo ${USB_BUS_NUMB}
 
-if [[ ($(checkIfVar "${USB_BUS_NUMA}") -eq "$EXIST") && ($(checkIfVar "${USB_BUS_NUMB}") -eq "$EXIST")]]; then
+if [[$(checkIfVar "${USB_BUS_NUMA}") -eq "$EXIST"]];
+then
     echo "epicsEnvSet(USB_BUS_NUMA, \"${USB_BUS_NUMA}\")" > ${SC_TOP}/usb_bus_id
-    echo "epicsEnvSet(USB_BUS_NUMB, \"${USB_BUS_NUMB}\")" >> ${SC_TOP}/usb_bus_id	
-
-else
-    echo "epicsEnvSet(USB_BUS_NUM,\"Unknown\")" > ${SC_TOP}/usb_bus_id
+    if [[$(checkIfVar "${USB_BUS_NUMB}") -eq "$EXIST"]];
+    then
+        echo "epicsEnvSet(USB_BUS_NUMB, \"${USB_BUS_NUMB}\")" >> ${SC_TOP}/usb_bus_id
+    fi	
+else 
     printf "We cannot find a detector readout master in the system\n";
     exit;
 fi
