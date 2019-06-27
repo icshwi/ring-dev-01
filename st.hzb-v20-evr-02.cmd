@@ -25,7 +25,7 @@ dbLoadRecords("$(MRF_HW_DB)","EVR=$(EVR),SYS=$(SYS),D=$(DEVICE),FEVT=88.0525,PIN
 #iocshLoad("$(evr-timestamp-buffer_DIR)/evr-timestamp-buffer.iocsh", "CHIC_SYS=$(CHIC_SYS), CHIC_DEV=$(CHIC_DEV), CHOP_DRV=$(CHOP_DRV), SYS=$(SYS)")
 
 ############# -------- Detector Readout Interface ----------------- ##################
-epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02-cmd") 
+epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02") 
 #epicsEnvSet("DETINT_DB_TOP", "$(E3_MODULES)/e3-detectorinterface/m-epics-detectorinterface-dev/db")
 epicsEnvSet("STREAM_PROTOCOL_PATH","/epics/base-7.0.2/require/3.0.5/siteApps/dmsc_detector_interface/master/db")
 
@@ -39,7 +39,7 @@ epicsEnvSet("NANO_DELTA", "1000000000")
 
 # Load the detector interface module
 
-system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports $(USB_BUS_NUM) ttyUSB1"
+system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports $(USB_BUS_NUMA) $(USB_BUS_NUMB)"
 iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
 
 
@@ -126,7 +126,7 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel "Pulser 7"
 #dbpf $(SYS)-$(DEVICE):SoftSeq0-RunMode-Sel "Single"
 
 #add sequence events and corresponding tick lists
-#system "/bin/bash /home/root/epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
+#system "/bin/bash /epics/iocs/cmds/hzb-v20-evr-02-cmd/evr_seq_sync.sh"
 
 
  

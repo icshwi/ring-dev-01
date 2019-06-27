@@ -1,7 +1,7 @@
 #!/bin/bash
 #export IOC_EXEC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 export IOC_NAME=hzb-v20-evr-02
-export IOC_EXEC_DIR=/epics/iocs/cmds/$IOC_NAME-cmd
+export IOC_EXEC_DIR=/epics/iocs/cmds/$IOC_NAME
 export VAR_DIR="/var"
 export BASE_VER="7.0.2"
 export REQUIRE_VER="3.0.5"
