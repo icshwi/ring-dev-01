@@ -6,7 +6,7 @@ import json
 import os
 
 def generateDbCmds(device_number, port, reg_map):
-    serial_port_cmds = """drvAsynSerialPortConfigure "$(COM{port_nr})", "/dev/{port}"
+    serial_port_cmds = """drvAsynSerialPortConfigure ("$(COM{port_nr})", "/dev/{port}")
 asynOctetSetInputEos ("$(COM{port_nr})",0,"\\r\\n")
 asynOctetSetOutputEos ("$(COM{port_nr})",0,"\\r\\n")
 asynSetOption ("$(COM{port_nr})", 0, "baud", "230400")

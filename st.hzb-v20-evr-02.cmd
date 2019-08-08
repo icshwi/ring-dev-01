@@ -96,7 +96,11 @@ dbpf $(SYS)-$(DEVICE):OutFPUV13-Src-SP 9
 
 
 # Map pulser 7 to event code 125
-dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
+
+
+#dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
+## --- Map pulser 7 (which triggers sequencer) to event 14 to model meta data trigger) ---- ##
+dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 14
 dbpf $(SYS)-$(DEVICE):DlyGen7-Width-SP 10
 
 

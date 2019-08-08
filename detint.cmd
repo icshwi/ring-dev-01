@@ -1,4 +1,4 @@
-drvAsynSerialPortConfigure "$(COM1)", "/dev/ttyUSB2"
+drvAsynSerialPortConfigure ("$(COM1)", "/dev/ttyUSB0")
 asynOctetSetInputEos ("$(COM1)",0,"\r\n")
 asynOctetSetOutputEos ("$(COM1)",0,"\r\n")
 asynSetOption ("$(COM1)", 0, "baud", "230400")
@@ -60,7 +60,7 @@ dbLoadRecords("clock_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=51, 
 dbLoadRecords("payload_select.db", "SYS=$(SYS), DEV=$(DEV1), COM=$(COM1), OFF=52, PRO=ics-dg.proto")
 
 
-drvAsynSerialPortConfigure "$(COM2)", "/dev/ttyUSB3"
+drvAsynSerialPortConfigure ("$(COM2)", "/dev/ttyUSB1")
 asynOctetSetInputEos ("$(COM2)",0,"\r\n")
 asynOctetSetOutputEos ("$(COM2)",0,"\r\n")
 asynSetOption ("$(COM2)", 0, "baud", "230400")
