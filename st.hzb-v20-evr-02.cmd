@@ -27,7 +27,7 @@ dbLoadRecords("$(MRF_HW_DB)","EVR=$(EVR),SYS=$(SYS),D=$(DEVICE),FEVT=88.0525,PIN
 ############# -------- Detector Readout Interface ----------------- ##################
 epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02") 
 #epicsEnvSet("DETINT_DB_TOP", "$(E3_MODULES)/e3-detectorinterface/m-epics-detectorinterface-dev/db")
-epicsEnvSet("STREAM_PROTOCOL_PATH","/epics/base-7.0.2/require/3.0.5/siteApps/dmsc_detector_interface/master/db")
+epicsEnvSet("STREAM_PROTOCOL_PATH","/epics/base-7.0.3/require/3.1.0/siteApps/dmsc_detector_interface/master/db")
 
 epicsEnvSet("DET_CLK_RST_EVT", "15")
 epicsEnvSet("DET_RST_EVT", "15")
@@ -98,7 +98,7 @@ dbpf $(SYS)-$(DEVICE):OutFPUV13-Src-SP 9
 # Map pulser 7 to event code 125
 
 
-#dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
+dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 125
 ## --- Map pulser 7 (which triggers sequencer) to event 14 to model meta data trigger) ---- ##
 dbpf $(SYS)-$(DEVICE):DlyGen7-Evt-Trig0-SP 14
 dbpf $(SYS)-$(DEVICE):DlyGen7-Width-SP 10

@@ -3,8 +3,8 @@
 export IOC_NAME=hzb-v20-evr-02
 export IOC_EXEC_DIR=/epics/iocs/cmds/$IOC_NAME
 export VAR_DIR="/var"
-export BASE_VER="7.0.2"
-export REQUIRE_VER="3.0.5"
+export BASE_VER="7.0.3"
+export REQUIRE_VER="3.1.0"
 export E3_BIN_DIR="/epics/base-$BASE_VER/require/$REQUIRE_VER/bin"
 export PROCSERV="/usr/bin/procServ"
 export PROCSERV_PORT=2003
