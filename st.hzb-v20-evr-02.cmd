@@ -1,5 +1,11 @@
 require dmsc_detector_interface,master
 require stream,2.8.8
+require autosave,5.9.0
+
+epicsEnvSet("TOP", "$(E3_CMD_TOP)/..")
+epicsEnvSet("IOCNAME", "hzb-v20-evr-02")
+
+
 
 epicsEnvSet("SYS", "ESSIP-DET:TS")
 epicsEnvSet("PCI_SLOT", "1:0.0")
@@ -18,11 +24,12 @@ epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
 
 < "$(EPICS_CMDS)/mrfioc2-common-cmd/st.evr.cmd"
 
+
+iocshLoad("$(autosave_DIR)/autosave.iocsh", "AS_TOP=$(TOP),IOCNAME=$(IOCNAME)")
+
 # Load EVR database
 dbLoadRecords("$(MRF_HW_DB)","EVR=$(EVR),SYS=$(SYS),D=$(DEVICE),FEVT=88.0525,PINITSEQ=0")
 
-# Load timestamp buffer database - @Will Smith, uncomment if required
-#iocshLoad("$(evr-timestamp-buffer_DIR)/evr-timestamp-buffer.iocsh", "CHIC_SYS=$(CHIC_SYS), CHIC_DEV=$(CHIC_DEV), CHOP_DRV=$(CHOP_DRV), SYS=$(SYS)")
 
 ############# -------- Detector Readout Interface ----------------- ##################
 epicsEnvSet("DETINT_CMD_TOP","/epics/iocs/cmds/hzb-v20-evr-02") 
@@ -141,3 +148,4 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel "Pulser 7"
 #dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
 dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 88052500 
 									  
+fdbrestore($(TOP))
