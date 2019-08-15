@@ -42,6 +42,7 @@ epicsEnvSet("SYNC_EVNT_LETTER", "EvtF")
 epicsEnvSet("SYNC_TRIG_EVT", "16")
 epicsEnvSet("NANO_DELTA", "1000000000")
 
+system "/bin/bash $(DETINT_CMD_TOP)/find_usb_bus_id.bash"
 < "$(DETINT_CMD_TOP)/usb_bus_id"
 
 # Load the detector interface module
@@ -148,4 +149,3 @@ dbpf $(SYS)-$(DEVICE):SoftSeq0-TrigSrc-Pulse-Sel "Pulser 7"
 #dbpf $(SYS)-$(DEVICE):syncTrigEvt-SP $(SYNC_TRIG_EVT)
 dbpf $(SYS)-$(DEVICE):FracNsecDelta-SP 88052500 
 									  
-fdbrestore($(TOP))

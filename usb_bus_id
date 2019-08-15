@@ -1,2 +1,2 @@
-epicsEnvSet(USB_BUS_NUMA, "ttyUSB0")
+epicsEnvSet(USB_BUS_NUMA, "ttyUSB2")
 epicsEnvSet(USB_BUS_NUMB, "ttyUSB1")
