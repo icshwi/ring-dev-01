@@ -53,8 +53,9 @@ def main():
     template_file = open(base_path + "detint.cmd.template", "r")
     template_string = template_file.read()
     
-    out_file = open(base_path + "detint.cmd", "w")
-    
+    #out_file = open(base_path + "detint.cmd", "w")
+    out_file = open("/tmp/" + "detint.cmd", "w")    
+
     out_file.write(write_str)
     out_file.write(template_string)
     out_file.close()
