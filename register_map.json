@@ -41,7 +41,7 @@
   {"db_file":"rw_register.db",  			"REG":"I2C-M2S",    "DESC":"I2C M2S Data",                   "OFF":36},
   {"db_file":"rw_register.db",  			"REG":"I2C-S2M",    "DESC":"I2C S2M Data",                   "OFF":37},
   {"db_file":"rw_register.db",  			"REG":"I2C-ENA",    "DESC":"I2C Ena",      		             "OFF":38},
-  {"db_file":"rw_register.db",  			"REG":"LEDSEL",     "DESC":"LED select",                     "OFF":39},
+  {"db_file":"led_sel_reg.db",  	     												                  "OFF":39},
   {"db_file":"ro_register.db",  			"REG":"PKCNT",      "DESC":"Packet Count",                   "OFF":40},
   {"db_file":"ro_register.db",  			"REG":"CH1-BFOV",   "DESC":"Ch 1 Buff Overflow Cnt",         "OFF":41},
   {"db_file":"ro_register.db",  			"REG":"CH2-BFOV",   "DESC":"Ch 2 Buff Overflow Cnt",         "OFF":42},
@@ -64,13 +64,14 @@
   {"db_file":"rw_register.db", "REG":"CH2-TST-GP",  "DESC":"Ch2 tst pulse gap", 			 "OFF":61},
   {"db_file":"rw_register.db", "REG":"CH3-TST-GP",  "DESC":"Ch3 tst pulse gap", 			 "OFF":62},
   {"db_file":"rw_register.db", "REG":"CH4-TST-GP",  "DESC":"Ch4 tst pulse gap", 			 "OFF":63},
-  {"db_file":"rw_register.db", "REG":"CH1-TST-CNT", "DESC":"Ch1 tst pulse gen cnt", 		 "OFF":64},
-  {"db_file":"rw_register.db", "REG":"CH2-TST-CNT", "DESC":"Ch2 tst pulse gen cnt", 		 "OFF":65},
-  {"db_file":"rw_register.db", "REG":"CH3-TST-CNT", "DESC":"Ch3 tst pulse gen cnt", 		 "OFF":66},
-  {"db_file":"rw_register.db", "REG":"CH4-TST-CNT", "DESC":"Ch4 tst pulse gen cnt", 		 "OFF":67},
-  {"db_file":"rw_register.db", "REG":"CH1-TST-BUF", "DESC":"Ch1 tst pulse gen buf", 		 "OFF":68},
-  {"db_file":"rw_register.db", "REG":"CH2-TST-BUF", "DESC":"Ch2 tst pulse gen buf", 		 "OFF":69},
-  {"db_file":"rw_register.db", "REG":"CH3-TST-BUF", "DESC":"Ch3 tst pulse gen buf", 		 "OFF":70},
-  {"db_file":"rw_register.db", "REG":"CH4-TST-BUF", "DESC":"Ch4 tst pulse gen buf", 		 "OFF":71}
+  {"db_file":"ro_register.db", "REG":"CH1-PUL-CNT", "DESC":"Ch1 tst pulse gen cnt", 	"SCAN":"1 second",	 "OFF":64},
+  {"db_file":"ro_register.db", "REG":"CH2-PUL-CNT", "DESC":"Ch2 tst pulse gen cnt", 	"SCAN":"1 second",	 "OFF":65},
+  {"db_file":"ro_register.db", "REG":"CH3-PUL-CNT", "DESC":"Ch3 tst pulse gen cnt", 	"SCAN":"1 second",	 "OFF":66},
+  {"db_file":"ro_register.db", "REG":"CH4-PUL-CNT", "DESC":"Ch4 tst pulse gen cnt", 	"SCAN":"1 second",	 "OFF":67},
+  {"db_file":"ro_register.db", "REG":"CH1-FRM-CNT", "DESC":"Ch1 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":68},
+  {"db_file":"ro_register.db", "REG":"CH2-FRM-CNT", "DESC":"Ch2 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":69},
+  {"db_file":"ro_register.db", "REG":"CH3-FRM-CNT", "DESC":"Ch3 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":70},
+  {"db_file":"ro_register.db", "REG":"CH4-FRM-CNT", "DESC":"Ch4 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":71},
+  {"db_file":"ro_register.db", "REG":"SMP-RATE",    "DESC":"ADC Sample Rate", "EGU":"Hz",			"SCAN":"5 second",		 "OFF":72}
   
 ]
