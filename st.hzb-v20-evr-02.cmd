@@ -14,13 +14,7 @@ epicsEnvSet("EVR", "$(DEVICE)")
 epicsEnvSet("MRF_HW_DB", "evr-pcie-300dc-ess.db")
 epicsEnvSet("E3_MODULES", "/epics/iocs/e3")
 epicsEnvSet("EPICS_CMDS", "/epics/iocs/cmds")
-
-######## Temporary until chopper group ###########
-######## changes PV names              ###########
-#epicsEnvSet("NCG_SYS", "HZB-V20:")
-# Change to 02a: to avoid conflict with EVR2 names
-#epicsEnvSet("NCG_DRV", "Chop-Drv-02tmp:")
-##################################################
+epicsEnvSet("TMP", "/tmp")
 
 < "$(EPICS_CMDS)/mrfioc2-common-cmd/st.evr.cmd"
 
@@ -43,12 +37,12 @@ epicsEnvSet("SYNC_TRIG_EVT", "16")
 epicsEnvSet("NANO_DELTA", "1000000000")
 
 system "/bin/bash $(DETINT_CMD_TOP)/find_usb_bus_id.bash"
-< "$(DETINT_CMD_TOP)/usb_bus_id"
+< "/tmp/usb_bus_id"
 
 # Load the detector interface module
 
 system "/usr/bin/python $(DETINT_CMD_TOP)/generate_cmd_file.py --path $(DETINT_CMD_TOP) --serial_ports $(USB_BUS_NUMA) $(USB_BUS_NUMB)"
-iocshLoad("$(DETINT_CMD_TOP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
+iocshLoad("$(TMP)/detint.cmd", "DEV1=RO1, DEV2=RO2, COM1=COM1, COM2=COM2, SYS=$(SYS), SYNC_EVNT=$(DET_RST_EVT), SYNC_EVNT_LETTER=$(SYNC_EVNT_LETTER), N_SEC_TICKS=1000000000 ")
 
 
 
