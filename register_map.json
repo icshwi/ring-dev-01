@@ -72,6 +72,8 @@
   {"db_file":"ro_register.db", "REG":"CH2-FRM-CNT", "DESC":"Ch2 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":69},
   {"db_file":"ro_register.db", "REG":"CH3-FRM-CNT", "DESC":"Ch3 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":70},
   {"db_file":"ro_register.db", "REG":"CH4-FRM-CNT", "DESC":"Ch4 tst pulse gen buf", 	"SCAN":"1 second",	 "OFF":71},
-  {"db_file":"ro_register.db", "REG":"SMP-RATE",    "DESC":"ADC Sample Rate", "EGU":"Hz",			"SCAN":"5 second",		 "OFF":72}
+  {"db_file":"ro_register.db", "REG":"SMP-RATE",    "DESC":"ADC Sample Rate", "EGU":"Hz",			"SCAN":"5 second",		 "OFF":72},
+  {"db_file":"ro_register.db", "REG":"CH3-THR-TS",  "DESC":"TS Latched at Thresh", "EGU":"Ticks",	 "OFF":75}
+  
   
 ]
