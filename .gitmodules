@@ -1,3 +1,6 @@
 [submodule "essip-adc-opi"]
 	path = essip-adc-opi
 	url = https://github.com/icshwi/essip-adc-opi.git
+[submodule "dgro_pkt_mux_def"]
+	path = dgro_pkt_mux_def
+	url = https://ws92@bitbucket.org/europeanspallationsource/dgro_pkt_mux_def.git
