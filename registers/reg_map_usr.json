@@ -1,0 +1,16 @@
+{
+    "project name"    : "Detector Group Readout Slave",
+    "space full name" : "User Configuration Register Space (Slave)",
+    "space label"     : "usr_regs_slv",
+    "data bus width"  : "32",
+    "addr bus width"  : "11",
+    "address offset"  : "0x40000000",
+    "rings"           : "12",
+    "ring space"      : "0x10000000",
+    "nodes"           : "4",
+    "node space"      : "0x00800000",
+    "register map"    : [
+        {"label": "ro_test", "type": "RO", "width": "32", "default": "x\"feedf00d\"", "desc": "Read only test register - should read 0xfeedfood"},
+        {"label": "rw_test", "type": "RW", "width": "32", "default": "x\"babacede\"", "desc": "Read/write test register - initial value is 0xbabcede"}
+    ]
+}

@@ -4,3 +4,6 @@
 [submodule "dgro_pkt_mux_def"]
 	path = dgro_pkt_mux_def
 	url = https://ws92@bitbucket.org/europeanspallationsource/dgro_pkt_mux_def.git
+[submodule "dgro_master"]
+	path = dgro_master
+	url = https://bitbucket.org/europeanspallationsource/dgro_master.git

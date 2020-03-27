@@ -1,0 +1,18 @@
+{
+    "project name"    : "Detector Group Readout Master",
+    "space full name" : "Packet Engine Configuration Register Space (Master)",
+    "space label"     : "ctl_regs_mst",
+    "data bus width"  : "32",
+    "addr bus width"  : "32",
+    "address offset"  : "0xc0001000",
+    "register map"    : [
+        {"label": "device_dna_h", "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Upper 4 bytes of FPGA DNA"},
+        {"label": "device_dna_m", "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Middle 4 bytes of FPGA DNA"},
+        {"label": "device_dna_l", "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Lower 4 bytes of FPGA DNA"},
+        {"label": "build_time",   "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Bitstream generation time"},
+        {"label": "git_hash_h",   "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Upper 4 bytes of Git hash"},
+        {"label": "git_hash_m",   "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Middle 4 bytes of Git hash"},
+        {"label": "git_hash_l",   "type": "RO", "width": "32", "default": "x\"00000000\"", "desc": "Lower 4 bytes of Git hash"},
+        {"label": "global_rst",   "type": "RW", "width": "32", "default": "x\"00000000\"", "desc": "Global reset"}
+    ]
+}

@@ -8,7 +8,7 @@ declare -gr SC_TOP="${SC_SCRIPT%/*}"
 declare -gr WR_PATH="/tmp"
 
 
-USB_BUS_NUM="$(readlink /dev/serial/by-id/usb-Silicon_Labs_CP2*_USB_to_UART_Bridge_Controller_*| awk '{print substr($0,7,7)}' )"
+USB_BUS_NUM="$(readlink /dev/serial/by-id/usb-Silicon_Labs_CP2*_USB_to_UART_Bridge_Controller_*if00*| awk '{print substr($0,7,7)}' )"
 
 echo ${USB_BUS_NUM}
 
