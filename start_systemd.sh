@@ -1,15 +1,15 @@
 #!/bin/bash
 #export IOC_EXEC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-export IOC_NAME=hzb-v20-evr-02
+export IOC_NAME=ring-dev-01
 export IOC_EXEC_DIR=/epics/iocs/cmds/$IOC_NAME
 export VAR_DIR="/var"
-export BASE_VER="7.0.3"
-export REQUIRE_VER="3.1.0"
+export BASE_VER="7.0.3.1"
+export REQUIRE_VER="3.1.2"
 export E3_BIN_DIR="/epics/base-$BASE_VER/require/$REQUIRE_VER/bin"
 export PROCSERV="/usr/bin/procServ"
 export PROCSERV_PORT=2003
 export PROCSERV_RUN_DIR=$IOC_NAME
-export PROCSERV_LOG_FILE=out-HZB-V20-EVR-02
+export PROCSERV_LOG_FILE=out-RNG-DEV-01
 
 export IOC_ST_CMD=st.$IOC_NAME.cmd
 source "$E3_BIN_DIR/setE3Env.bash"
